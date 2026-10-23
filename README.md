@@ -82,8 +82,32 @@ langsung dari WAV di `data/raw/aliya/`. File raw tetap disimpan.
 
 ### Ekstraksi MFCC
 
-Belum diimplementasikan. Input dari loader: array audio dan sample rate.
-Output yang dibutuhkan: fitur 39 dimensi per frame.
+`src/mfcc.py` memakai `python_speech_features` dengan parameter: frame 25 ms, hop 10 ms, pre-emphasis 0.97, jendela Hamming, NFFT 512, 26 filter mel, log, DCT, lalu c0 diganti log energi frame. Lifter dimatikan
+karena tidak ada di materi. Delta dan delta-delta memakai 2 frame maju/mundur.
+
+```python
+from src.data_loader import load_dataset
+from src.mfcc import extract_features, extract_mfcc_39, FEATURE_NAMES
+
+data = load_dataset()
+templates = extract_features(data["template"])  # tiap record dapat key "mfcc"
+features = templates[0]["mfcc"]                  # shape (jumlah_frame, 39)
+# Satu audio saja: extract_mfcc_39(audio, sample_rate)
+```
+
+`FEATURE_NAMES` adalah list 39 nama kolom, sesuai urutan kolom di matriks `mfcc`.
+Isinya hanya label, tidak dipakai dalam perhitungan, misalnya untuk tahu
+kolom ke-0 adalah energi atau untuk judul grafik. Urutannya `energy, c1..c12`
+(fitur statis), lalu `d_energy, d_c1..d_c12` (delta), lalu
+`dd_energy, dd_c1..dd_c12` (delta-delta).
+
+CMVN dibuat opsional dengan default mati( bisa diatur di `extract_features(records, cmvn=True)`).
+Statistiknya per speaker, diambil dari semua rekaman speaker itu di `records` agar yang hilang adalah suara rata-rata dari speaker.
+Tidak pakai CMVN per ucapan karena vowel diucapkan sendirian dan stasioner, sehingga rata-ratanya adalah ciri vowel itu sendiri.
+```powershell
+python -m src.mfcc                                   # ringkasan shape fitur
+python -m src.mfcc --cmvn --output outputs/mfcc.npz  # simpan fitur
+```
 
 ### DTW dan Model Gaussian
 
