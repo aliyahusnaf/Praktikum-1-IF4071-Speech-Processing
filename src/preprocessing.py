@@ -61,6 +61,52 @@ def validate_audio_file(path):
             "signal_sha256": hashlib.sha256(audio.astype("<f4").tobytes()).hexdigest()}
 
 
+def audio_stats(audio, sample_rate):
+    return {"duration_seconds": len(audio) / sample_rate,
+            "rms": float(np.sqrt(np.mean(audio.astype(np.float64) ** 2))),
+            "peak": float(np.max(np.abs(audio))),
+            "dc_offset": float(np.mean(audio, dtype=np.float64)),
+            "clipped_fraction": float(np.mean((audio >= 32767 / 32768) | (audio <= -1)))}
+
+
+def preprocess_audio(audio, sample_rate, threshold_db=-30, padding_ms=80):
+    # Ambang energi relatif ke bagian paling keras, bukan normalisasi volume.
+    audio = np.asarray(audio, dtype=np.float32)
+    if audio.ndim != 1 or not audio.size or not np.isfinite(audio).all():
+        raise ValueError("Audio harus array 1D, tidak kosong, dan berisi angka finite")
+    if sample_rate <= 0 or not np.isfinite(sample_rate):
+        raise ValueError("Sample rate harus positif")
+    if not np.isfinite(threshold_db) or threshold_db >= 0:
+        raise ValueError("threshold_db harus negatif")
+    if not np.isfinite(padding_ms) or padding_ms < 0:
+        raise ValueError("padding_ms tidak boleh negatif")
+    before = audio_stats(audio, sample_rate)
+    centered = audio - np.float32(before["dc_offset"])
+    frame = max(1, round(sample_rate * 0.020))
+    hop = max(1, round(sample_rate * 0.010))
+    start, end = 0, len(audio)
+    status = "kept_original_bounds"
+    if len(audio) >= frame:
+        starts = np.arange(0, len(audio), hop)
+        rms = np.array([np.sqrt(np.mean(centered[s:s + frame].astype(np.float64) ** 2))
+                        for s in starts])
+        threshold = max(1e-4, float(rms.max()) * 10 ** (threshold_db / 20))
+        active = rms >= threshold
+        # Abaikan bunyi singkat di pinggir; jangan potong jeda di tengah vowel.
+        edges = np.diff(np.r_[False, active, False].astype(int))
+        runs = [(a, b) for a, b in zip(np.flatnonzero(edges == 1), np.flatnonzero(edges == -1))
+                if b - a >= 5]
+        if runs:
+            padding = round(sample_rate * padding_ms / 1000)
+            start = max(0, int(starts[runs[0][0]]) - padding)
+            end = min(len(audio), int(starts[runs[-1][1] - 1]) + frame + padding)
+            status = "trimmed" if start > 0 or end < len(audio) else "kept_original_bounds"
+    result = centered[start:end].astype(np.float32)
+    return result, {"before": before, "after": audio_stats(result, sample_rate),
+                    "start_sample": start, "end_sample": end, "trim_status": status,
+                    "threshold_db": threshold_db, "padding_ms": padding_ms}
+
+
 def validate_dataset(data_dir=DEFAULT_DATA_DIR, expected_speakers=None):
     # Cek jumlah, pasangan speaker-vowel, dan rekaman yang dobel.
     speakers = tuple(s.upper() for s in (

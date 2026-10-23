@@ -52,7 +52,21 @@ Setiap record berisi `audio`, `sample_rate`, `speaker`, `label`, `recording`,
 `filename`, dan `path`. Bisa juga baca satu file dengan `load_audio(path)`.
 Path dataset default mengikuti lokasi proyek. Untuk lokasi lain:
 `load_dataset(data_dir="C:/lokasi/data/processed")`.
-Loader menolak dataset yang gagal validasi. Tidak ada trimming atau noise reduction.
+Loader menolak dataset yang gagal validasi. WAV di `data/processed/` sudah
+melalui penghilangan DC offset dan trimming jeda awal/akhir. Jadi `load_dataset()`
+langsung membaca hasilnya tanpa trimming ulang. File raw tetap utuh.
+
+Trimming memakai energi RMS: frame 20 ms, hop 10 ms, ambang -30 dB dari RMS
+tertinggi (minimal 0.0001), bagian aktif minimal 5 frame, dan padding 80 ms.
+Jeda di tengah tetap disimpan. Tidak ada normalisasi volume atau noise reduction.
+Saat disimpan, hasil dibulatkan kembali ke PCM 16-bit dan dibatasi ke rentang int16.
+
+Durasi sebelum/sesudah ada di `outputs/preprocessing_report.json`.
+Salinan WAV sebelum trimming ada di `outputs/processed_before_trim.zip`.
+Hasil perlu didengarkan untuk memastikan bagian vowel tidak terpotong.
+Kalau ingin mencoba preprocessing pada audio lain, pakai `preprocess_audio()`
+atau `load_audio(path, preprocess=True)`. Jangan aktifkan lagi untuk dataset
+processed yang sekarang supaya tidak terpotong berulang.
 
 Konversi M4A sebelumnya dilakukan dari folder raw masing-masing speaker:
 

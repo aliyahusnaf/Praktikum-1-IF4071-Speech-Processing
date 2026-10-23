@@ -32,9 +32,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19200,
-      "duration_seconds": 1.2,
-      "signal_sha256": "d1f418a1b9218b6d0259942fab1085c0c955cd36e7c405644a101db5ee57ec95"
+      "samples": 10240,
+      "duration_seconds": 0.64,
+      "signal_sha256": "c706a603e933edc506717111709670ee33277286c6ddfbc1169f46583d3b9158"
     },
     {
       "split": "template",
@@ -45,9 +45,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 17600,
-      "duration_seconds": 1.1,
-      "signal_sha256": "f79932e3f9be690635183b241270964a20bc205c729677d7f904c8d9e3abd91f"
+      "samples": 12160,
+      "duration_seconds": 0.76,
+      "signal_sha256": "9f242a724d8460ac902e506344c1555b94a76ac94d07e53ab2590559f0a57d66"
     },
     {
       "split": "template",
@@ -58,9 +58,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19200,
-      "duration_seconds": 1.2,
-      "signal_sha256": "52c53ee8b3369a43a20f36cfc18dec5e747716c5ebfd9df6cb1aeb2e4ee47c01"
+      "samples": 10560,
+      "duration_seconds": 0.66,
+      "signal_sha256": "8da64724b1f2d8e44513aebd55b0c262cc67b61209b8b429f0f87ab9e089edca"
     },
     {
       "split": "template",
@@ -71,9 +71,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 30400,
-      "duration_seconds": 1.9,
-      "signal_sha256": "1fed8aee771a9617533f7c744a0119d2f3f406396fd6fe2e0b2c2baa1af446ae"
+      "samples": 11840,
+      "duration_seconds": 0.74,
+      "signal_sha256": "987661670fb8005e9b4661289a38ab5929a759052a667bfd1dc90f24e8e92103"
     },
     {
       "split": "template",
@@ -84,9 +84,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 17600,
-      "duration_seconds": 1.1,
-      "signal_sha256": "a1046cfec288e78943403fc88554020a8feac6ebd6bdcfa8fbf6e31eada890f0"
+      "samples": 11040,
+      "duration_seconds": 0.69,
+      "signal_sha256": "d9790b7135bf37c7e1f00d1a4f6819d6c0fe5b0c94ec9ad6c151f0ff0ec337d1"
     },
     {
       "split": "template",
@@ -97,9 +97,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 39915,
-      "duration_seconds": 2.4946875,
-      "signal_sha256": "2a825d60ef0365c15a64a2db95224b62a38603d5e6b6be1b852447b2beebb51f"
+      "samples": 11360,
+      "duration_seconds": 0.71,
+      "signal_sha256": "71f93a57763159a3306b6cc1869c9e6832ac7b02df688671ba45dc2ff0d6d617"
     },
     {
       "split": "template",
@@ -110,9 +110,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 41280,
-      "duration_seconds": 2.58,
-      "signal_sha256": "bc4398c69207474b8629dd23e3a7e8f1b1157ba3c90fefcbab882249da13cd42"
+      "samples": 13440,
+      "duration_seconds": 0.84,
+      "signal_sha256": "5edcfdafdde13bbf34bf5b29cb59d57f8009a2fd8f7fef6fc3871b66bad39c8a"
     },
     {
       "split": "template",
@@ -123,9 +123,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 46741,
-      "duration_seconds": 2.9213125,
-      "signal_sha256": "6fe386edf0d4481d178860956c23fbff4737bba781ce477cadef939859ee6107"
+      "samples": 11680,
+      "duration_seconds": 0.73,
+      "signal_sha256": "641f0bf8f375dea76ac67cd00378dcd7523003a8179ac6899803dbf4f973dd54"
     },
     {
       "split": "template",
@@ -136,9 +136,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 39915,
-      "duration_seconds": 2.4946875,
-      "signal_sha256": "bbe99da7a8cf4aefa75e86cfa8f2efb4190c658cf3fece48d92878dac774e63f"
+      "samples": 14560,
+      "duration_seconds": 0.91,
+      "signal_sha256": "ebf0031b8c4d5b71dba0b6889043aebba23d54c821cfc1338decb14c4fb76d9b"
     },
     {
       "split": "template",
@@ -149,9 +149,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 42645,
-      "duration_seconds": 2.6653125,
-      "signal_sha256": "fb46bf2f7532f7f760a2f1cd1af6e413093c16f67de2306002ebcb1b0320a36c"
+      "samples": 12960,
+      "duration_seconds": 0.81,
+      "signal_sha256": "1259fd57071ecb9da9714199888051e9f8824c0120c26d5546b15dca3f253097"
     },
     {
       "split": "template",
@@ -164,7 +164,7 @@
       "bit_depth": 16,
       "samples": 31723,
       "duration_seconds": 1.9826875,
-      "signal_sha256": "e0f44012470c78c4ac1f0a9e8fda0373f3a2d23737a7dc2e7430c5d8c5f2537e"
+      "signal_sha256": "0480909bad7b4ac945b469c56b4a083b3b4ebd2c580fd79d20c2ea7a027a1b33"
     },
     {
       "split": "template",
@@ -175,9 +175,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19435,
-      "duration_seconds": 1.2146875,
-      "signal_sha256": "11c2e768ad25b3882be18edb491d3413eb5a001de5ebc8b6cd0cc6a55e73ec26"
+      "samples": 13920,
+      "duration_seconds": 0.87,
+      "signal_sha256": "fb7ac96814e638a4c4abdf023c3f03183f79859caeed6e6e89eaf68b036d5154"
     },
     {
       "split": "template",
@@ -190,7 +190,7 @@
       "bit_depth": 16,
       "samples": 20800,
       "duration_seconds": 1.3,
-      "signal_sha256": "b2ba8d78890130d175e4702c2966ab13d5acea155b9669ebd983fa8f14410dc1"
+      "signal_sha256": "72ee93e9b5c7f92d436ababf706333573233e3fce087654d10e022f5a0b2f385"
     },
     {
       "split": "template",
@@ -201,9 +201,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19435,
-      "duration_seconds": 1.2146875,
-      "signal_sha256": "e837edaa1d41041e23bddb19004cf4b7328a5b7c43cc73e010d601c06af2998c"
+      "samples": 15520,
+      "duration_seconds": 0.97,
+      "signal_sha256": "725f95dd94695cc05df844e0ad8015f10513c7171063ba3c0aebe5f72bbd9c1a"
     },
     {
       "split": "template",
@@ -214,9 +214,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 23531,
-      "duration_seconds": 1.4706875,
-      "signal_sha256": "3a5592eb94e81074e209bb54059b3567b2deaa3ac15c688d16421fbf9d9f91a7"
+      "samples": 15520,
+      "duration_seconds": 0.97,
+      "signal_sha256": "7fde055d33a2a159dc5e73aa4d35563d5b4e5f1cdbfe9266c9e1878402cb8758"
     },
     {
       "split": "template",
@@ -227,9 +227,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 34133,
-      "duration_seconds": 2.1333125,
-      "signal_sha256": "26c6c8a0ecb9e718ae357fb5471d962858f8628e6c5022777de6eb7ca0004a7d"
+      "samples": 19520,
+      "duration_seconds": 1.22,
+      "signal_sha256": "2285d747a0344840df9a74ed0830b44a45906b79b382d8cdf516af8d87445bb4"
     },
     {
       "split": "template",
@@ -240,9 +240,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 34133,
-      "duration_seconds": 2.1333125,
-      "signal_sha256": "85640a658391509990ee79cd5f4c5aedbb3972d5289a8dd91612a9dc837b3504"
+      "samples": 26293,
+      "duration_seconds": 1.6433125,
+      "signal_sha256": "abc17c942f26afe48b7382992d891beb836c8175f6002be07f5eaf0f828524a3"
     },
     {
       "split": "template",
@@ -253,9 +253,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 32768,
-      "duration_seconds": 2.048,
-      "signal_sha256": "9a70ebc494994797726b65c28a815ae86d86346b2a64d2a7cd4524cf26eacb47"
+      "samples": 16160,
+      "duration_seconds": 1.01,
+      "signal_sha256": "3c1b7acc67a3ac7117cb3e760363c58d9930f84e6f32cd5fe22521eef3c0d3bd"
     },
     {
       "split": "template",
@@ -266,9 +266,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 32768,
-      "duration_seconds": 2.048,
-      "signal_sha256": "e0e58273e31b05b22867bf55c072b03ce5a0aa03c5dba4e0d63ab36ba29ea97d"
+      "samples": 31040,
+      "duration_seconds": 1.94,
+      "signal_sha256": "dea0ccdaf88dac657e66b6be8e76fdba66fbc4e5c1ea123f505bdc6d38f47232"
     },
     {
       "split": "template",
@@ -279,9 +279,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 28672,
-      "duration_seconds": 1.792,
-      "signal_sha256": "78faa1ec80aac74daf559dd83ff95f2edf057fdadc1410436c227dbdf2cf1a1f"
+      "samples": 12000,
+      "duration_seconds": 0.75,
+      "signal_sha256": "574907da3e8c1a59623b97d7d600d39177e6227e03b1bdf91346b518800f8151"
     },
     {
       "split": "template",
@@ -292,9 +292,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 15360,
-      "duration_seconds": 0.96,
-      "signal_sha256": "5fc5e15738f05f8dafdf049cd567d3c6f543e68038f554853c72e048e231ae94"
+      "samples": 11840,
+      "duration_seconds": 0.74,
+      "signal_sha256": "db9f4ea50f78fba42b1fb3be65cf0d2a80882b0db8dff65107e2bfb96a4df80e"
     },
     {
       "split": "template",
@@ -305,9 +305,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20480,
-      "duration_seconds": 1.28,
-      "signal_sha256": "8c54b3cb62da2539175405b8ed964701d797903787e512f965ea98587535c5d5"
+      "samples": 16800,
+      "duration_seconds": 1.05,
+      "signal_sha256": "3b0aa9fd374d0af37827a9ae51fe641d8cc94f230229b0e856c71a33f84b856c"
     },
     {
       "split": "template",
@@ -318,9 +318,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 18091,
-      "duration_seconds": 1.1306875,
-      "signal_sha256": "4b3c3e8d34256f039cfe97e227653556fd6cd4bae87e1c8874d719cde25c63fe"
+      "samples": 10400,
+      "duration_seconds": 0.65,
+      "signal_sha256": "040fc3bddd5a83771eaf31c40ee7c92006fccac93302bf77424191a3d1f04591"
     },
     {
       "split": "template",
@@ -331,9 +331,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19456,
-      "duration_seconds": 1.216,
-      "signal_sha256": "1a9836601eaee01db845e3a135b51096d6d49e9e564884148138aa3abc0c1cb3"
+      "samples": 8960,
+      "duration_seconds": 0.56,
+      "signal_sha256": "4ef9775b6cc1710feb8bdeb29dae576e00f9130c1ba02984d0e78c8b079da055"
     },
     {
       "split": "template",
@@ -344,9 +344,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 21504,
-      "duration_seconds": 1.344,
-      "signal_sha256": "55f0656e51e3016eacabc754bf65ff94af5e788b4d3ecd99bfa1f3dc3276eff6"
+      "samples": 9600,
+      "duration_seconds": 0.6,
+      "signal_sha256": "f28e1eedb17e80b239f4c044b146bd17ca4e652e10410400b009f58ce9812863"
     },
     {
       "split": "template",
@@ -357,9 +357,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20480,
-      "duration_seconds": 1.28,
-      "signal_sha256": "9f23f7c539e94520fdef429ffd79906562edc79733d0473febe06224a3684fb7"
+      "samples": 8640,
+      "duration_seconds": 0.54,
+      "signal_sha256": "a34516424212c0ce57153644a6bb7a8ea367e7afaacb84ba26d35b1723da3495"
     },
     {
       "split": "template",
@@ -370,9 +370,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 18091,
-      "duration_seconds": 1.1306875,
-      "signal_sha256": "76946f1be1b894b685860d8e2937d0f8ce6c9c0eb242a267816b1aaa1319dff8"
+      "samples": 11040,
+      "duration_seconds": 0.69,
+      "signal_sha256": "b67b9a11f1bdc2b76f8f94a1e1689e225b318b7150b935e82df2665d716fea2e"
     },
     {
       "split": "template",
@@ -383,9 +383,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 22187,
-      "duration_seconds": 1.3866875,
-      "signal_sha256": "7aa18d806fbb057e221c347c21c12ac211de6322d4250323b8cd40fc2e6717e3"
+      "samples": 10240,
+      "duration_seconds": 0.64,
+      "signal_sha256": "0c1929883ed23006ae5817548069077ed40b7a90124bdeab5dac8c83ab2d4424"
     },
     {
       "split": "template",
@@ -396,9 +396,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 16384,
-      "duration_seconds": 1.024,
-      "signal_sha256": "5330b2c45f88e8b6e3b4da3d3f05674d601a1b9998f32dea7797e20b0ae442be"
+      "samples": 11904,
+      "duration_seconds": 0.744,
+      "signal_sha256": "a303269886fa3153965d844b3b45bf6451d647ce9a6a87b66dc019d6ac5ac985"
     },
     {
       "split": "template",
@@ -409,9 +409,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19115,
-      "duration_seconds": 1.1946875,
-      "signal_sha256": "76073d76268403539286b5c7c09204315c49cee6bac9065ce76f940e90c43894"
+      "samples": 8800,
+      "duration_seconds": 0.55,
+      "signal_sha256": "8810fa691cd2704b94fba3ea0d8bd90ab7e9353723a47cb34fe846ac19a30a1d"
     },
     {
       "split": "closed",
@@ -422,9 +422,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19200,
-      "duration_seconds": 1.2,
-      "signal_sha256": "3a3523bd86082a2c59bc2a5a8070389a313f9f670972d09fed0dfe23b44d3e75"
+      "samples": 11520,
+      "duration_seconds": 0.72,
+      "signal_sha256": "dd25295e3308ca184d5399b18637001f26ba4511dd67c3b3bb6dca75846e7b90"
     },
     {
       "split": "closed",
@@ -435,9 +435,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19200,
-      "duration_seconds": 1.2,
-      "signal_sha256": "c94a24973cd2d155559ebc701493b3721c18d614ed998d671c184801ecdb280b"
+      "samples": 10880,
+      "duration_seconds": 0.68,
+      "signal_sha256": "633da9244b1f6fd7b1e211ec65264981f83de435ebe839d02b8687d776ce6ae1"
     },
     {
       "split": "closed",
@@ -448,9 +448,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 22400,
-      "duration_seconds": 1.4,
-      "signal_sha256": "705faf26697c2aece79ea40e5d483b27eabf42f0689495e6ec848fbd9d058590"
+      "samples": 10880,
+      "duration_seconds": 0.68,
+      "signal_sha256": "a5e7d20151af1df04eb61abc29d0040341f95fab621370a42c9daf4aeab72070"
     },
     {
       "split": "closed",
@@ -461,9 +461,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20800,
-      "duration_seconds": 1.3,
-      "signal_sha256": "fe66a1beafa3a2dde33341bd252604412f833cce8027df8667d96e27d389d0c1"
+      "samples": 11520,
+      "duration_seconds": 0.72,
+      "signal_sha256": "28380dec0e5ed0f7dd1fcbdb22b8c9e386298aa7b55a5af56a97ae1e544c7370"
     },
     {
       "split": "closed",
@@ -474,9 +474,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 22400,
-      "duration_seconds": 1.4,
-      "signal_sha256": "d6f144e4e2772cec29d9f470d934a441319993aac32d55781389efe33966614c"
+      "samples": 11040,
+      "duration_seconds": 0.69,
+      "signal_sha256": "a124d9bc67ff596895ccc182b91dc65eedef19b208afd8eeb0c015d5be59e6a7"
     },
     {
       "split": "closed",
@@ -487,9 +487,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 42645,
-      "duration_seconds": 2.6653125,
-      "signal_sha256": "25e0e9ab070ac84ccace8919d28219463a9546500d0c820bf439a1854e9c4b59"
+      "samples": 11520,
+      "duration_seconds": 0.72,
+      "signal_sha256": "8197b4ffaf7605f2da1be6ed4233aebb18fc09358b091937c9bfa979c5745b40"
     },
     {
       "split": "closed",
@@ -500,9 +500,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 42645,
-      "duration_seconds": 2.6653125,
-      "signal_sha256": "85d6d364a7890156372c9054944ca8a18f6ffb7e34dc7ef5e568356ebdf6acbc"
+      "samples": 14080,
+      "duration_seconds": 0.88,
+      "signal_sha256": "55f3071f57aaf320edb93e0ad3f943fd5f35634290cb4b190ee4e107b0f896c2"
     },
     {
       "split": "closed",
@@ -513,9 +513,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 49472,
-      "duration_seconds": 3.092,
-      "signal_sha256": "e9dad3fcc3bf1dac1fb63e3e543438c27144c35d6d430eea5ed5df62bb0ed822"
+      "samples": 12320,
+      "duration_seconds": 0.77,
+      "signal_sha256": "0cfe8f68e0f634b23a6a46d19317f580b0b5cf8a6dde0d9c0a3b87bef20fe1a2"
     },
     {
       "split": "closed",
@@ -526,9 +526,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 39915,
-      "duration_seconds": 2.4946875,
-      "signal_sha256": "03d21c68ff659506b174411ce5a375749d75ab6a7ec1b2c1c9587a66f50f8390"
+      "samples": 13760,
+      "duration_seconds": 0.86,
+      "signal_sha256": "0e6ce1f18ae5911de513208792278e75cd13d1e7c992d796cd8b65eff54f094c"
     },
     {
       "split": "closed",
@@ -539,9 +539,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 45376,
-      "duration_seconds": 2.836,
-      "signal_sha256": "279ccb03b84ead08d6d8dbe7f03a0d3035ed16add886177cf431699b52ac9e3c"
+      "samples": 13760,
+      "duration_seconds": 0.86,
+      "signal_sha256": "75a49693550194b300c83ae232a9fa9a0423df642a66155dd8182ab4ba0b86cb"
     },
     {
       "split": "closed",
@@ -554,7 +554,7 @@
       "bit_depth": 16,
       "samples": 26261,
       "duration_seconds": 1.6413125,
-      "signal_sha256": "50ac8499a6844ab68852c55d066b618a5192134d9d2ad3b9747f7fbff5e701a8"
+      "signal_sha256": "e19a59e65f381ffbf30e7cd35f9dc43b4d79e432825f7f91c2d294972dc9bfe9"
     },
     {
       "split": "closed",
@@ -565,9 +565,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20800,
-      "duration_seconds": 1.3,
-      "signal_sha256": "f44c3be7ae06bf21df20aa120f629741d3827eaa445868a881ee4b021eafcb9b"
+      "samples": 13600,
+      "duration_seconds": 0.85,
+      "signal_sha256": "58e315d98fa2979db278731796c6f4ea5e5d1e31232d49bf32835812cbebe9af"
     },
     {
       "split": "closed",
@@ -578,9 +578,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 22165,
-      "duration_seconds": 1.3853125,
-      "signal_sha256": "de9f035395c2ac26fb1cbb0275fc7b072217896b78aa3b469c8eaeafebd03e9b"
+      "samples": 20085,
+      "duration_seconds": 1.2553125,
+      "signal_sha256": "4032ccaa4d3810bd2681dda166e613053962fb0ed1a2928b0437acbb9be1a69c"
     },
     {
       "split": "closed",
@@ -591,9 +591,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 19435,
-      "duration_seconds": 1.2146875,
-      "signal_sha256": "13df31731b59f9cb207d3befd88c7e92d851f1a31cac40ee2d301cbceb159760"
+      "samples": 16480,
+      "duration_seconds": 1.03,
+      "signal_sha256": "403c9239476e8543057f6cae49399d5a68b5b4770be2cec42654abefb5dc9a8d"
     },
     {
       "split": "closed",
@@ -604,9 +604,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 23531,
-      "duration_seconds": 1.4706875,
-      "signal_sha256": "f95bca9b1427710bd14b3b30619e45f6dcb20eaecaea697c420fc7e8abd540ce"
+      "samples": 18080,
+      "duration_seconds": 1.13,
+      "signal_sha256": "0cee01bde000eaf082f0d9929840526d6227e7cae91b5528024401a3cfb3a7ed"
     },
     {
       "split": "closed",
@@ -617,9 +617,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 31403,
-      "duration_seconds": 1.9626875,
-      "signal_sha256": "1f45d657e8b96f2763fec5ca25effa48211095e6fbc053c9edb9741c2d1d1ef0"
+      "samples": 18720,
+      "duration_seconds": 1.17,
+      "signal_sha256": "249db66d99ada4c9d14c9aee5f627a49f32a7e2f3ec7a78b7ecfc1ccdbbf287c"
     },
     {
       "split": "closed",
@@ -630,9 +630,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 31403,
-      "duration_seconds": 1.9626875,
-      "signal_sha256": "525689184603d94aaa01bb13ba603b626c62bcad73d24302eb8a2ed99b9cca83"
+      "samples": 24480,
+      "duration_seconds": 1.53,
+      "signal_sha256": "6ef21ee5631fef7656a96fb24a419d169a603fa727a0fafa8ea2705a9acb9129"
     },
     {
       "split": "closed",
@@ -643,9 +643,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 31403,
-      "duration_seconds": 1.9626875,
-      "signal_sha256": "c96429baff147de9c8062f7462508e81380cfadc2ddb49043e508bf9098f14f8"
+      "samples": 19680,
+      "duration_seconds": 1.23,
+      "signal_sha256": "1c9ffd5239f4fcc42a04c84d210b02ddbad35554d5c9db42ffa16e20628b6f7d"
     },
     {
       "split": "closed",
@@ -656,9 +656,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 30037,
-      "duration_seconds": 1.8773125,
-      "signal_sha256": "99395045ab91f889d97a33db76450984eac2fbb2eba0b98f7d442e3eef14b746"
+      "samples": 10720,
+      "duration_seconds": 0.67,
+      "signal_sha256": "ae5f1ab2abcfc991fced931e6a88986e7d28f036b8c2e419383f011fd7834157"
     },
     {
       "split": "closed",
@@ -669,9 +669,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 32768,
-      "duration_seconds": 2.048,
-      "signal_sha256": "291caca5e0e56e55021eb22f6910d05cb8b0d1bdc9530d0cbd38f8fa2f9f0d5e"
+      "samples": 17600,
+      "duration_seconds": 1.1,
+      "signal_sha256": "6043b7e8d69aaf937898abead024d65bc697fc3fdf5af1beadd1d3662382942c"
     },
     {
       "split": "closed",
@@ -682,9 +682,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20480,
-      "duration_seconds": 1.28,
-      "signal_sha256": "7c97668b78080b540698a513390ffc315e5b212b817902435c48b651ada59c8d"
+      "samples": 18400,
+      "duration_seconds": 1.15,
+      "signal_sha256": "3b3747249c15d8c24632687efc06553a0c143caae3f6ebe82237717cde5d28f6"
     },
     {
       "split": "closed",
@@ -695,9 +695,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20480,
-      "duration_seconds": 1.28,
-      "signal_sha256": "21c746318f3d3dadd803bf2f163055d1ee9d85c1b059238696f638c256aeb89e"
+      "samples": 9760,
+      "duration_seconds": 0.61,
+      "signal_sha256": "4ba7f625e502c2ae126f95d4282362927d5b300f504286bfb82ed3f168fa388d"
     },
     {
       "split": "closed",
@@ -708,9 +708,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 22869,
-      "duration_seconds": 1.4293125,
-      "signal_sha256": "076a1b541fb639c6cbf511ca8f7a085831c87fe8e69f7ad2ea3c232a2b332bc7"
+      "samples": 9280,
+      "duration_seconds": 0.58,
+      "signal_sha256": "4289e49480dd145721aa5b073dd5dcb0c86d8d5ff85e006ecc17b717fd6551d9"
     },
     {
       "split": "closed",
@@ -721,9 +721,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 13995,
-      "duration_seconds": 0.8746875,
-      "signal_sha256": "dd55bd54b4afaf48ec3cdebddef36da70d5dd520de3497e8529357f36e4dc0fa"
+      "samples": 8555,
+      "duration_seconds": 0.5346875,
+      "signal_sha256": "5d0b8879bfe1c075d5677a5293b9e5bc6b95f315852566c329678f7cd048c4a7"
     },
     {
       "split": "closed",
@@ -734,9 +734,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 21845,
-      "duration_seconds": 1.3653125,
-      "signal_sha256": "42dc29abe0eed5b4bd0bb47a6c81d71bb97a7c85fc7ed1694acf75f9db2430c2"
+      "samples": 9600,
+      "duration_seconds": 0.6,
+      "signal_sha256": "bd522f5416040c88d98ee3029cd68c338efd7f76c2f097d66312e4be2bd7761c"
     },
     {
       "split": "closed",
@@ -747,9 +747,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 21504,
-      "duration_seconds": 1.344,
-      "signal_sha256": "25083c2e6a197cb279715ab6059f4a37dd9f78b13ebe80bed7e917828cf1a52c"
+      "samples": 9440,
+      "duration_seconds": 0.59,
+      "signal_sha256": "9d2715af2d443c579121177229a918111c55982abe126c004be4d7524954f265"
     },
     {
       "split": "closed",
@@ -760,9 +760,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 25941,
-      "duration_seconds": 1.6213125,
-      "signal_sha256": "0db169efb2f32229f26165d0853bcea2ff61a579b9c841032a245c093ec620bb"
+      "samples": 10880,
+      "duration_seconds": 0.68,
+      "signal_sha256": "395489119ca1aee184e9bc5ff41082f5f6217b513f5c9ffba2ab77c0715a4687"
     },
     {
       "split": "closed",
@@ -773,9 +773,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 24235,
-      "duration_seconds": 1.5146875,
-      "signal_sha256": "62a0524d7f532dd570cbe9aa457bd09e2a2e9e17a387b181b7cc7fd450a9cf3e"
+      "samples": 9440,
+      "duration_seconds": 0.59,
+      "signal_sha256": "4f221e1e8d5b4975f37f458c44d41a6b5439a22ee3a4043d15021abeab543b7a"
     },
     {
       "split": "closed",
@@ -786,9 +786,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 21163,
-      "duration_seconds": 1.3226875,
-      "signal_sha256": "17a5a0acfbf0c246761c1106005702689ae7795d83ee46b9bef5ebbc4bf9f868"
+      "samples": 11200,
+      "duration_seconds": 0.7,
+      "signal_sha256": "ce851cd8f0ec7b1b757590457b3be62f883a4c0eb841ee17cfda2fdeb4be6bc3"
     },
     {
       "split": "closed",
@@ -799,9 +799,9 @@
       "sample_rate": 16000,
       "channels": 1,
       "bit_depth": 16,
-      "samples": 20139,
-      "duration_seconds": 1.2586875,
-      "signal_sha256": "c7ddd6ef49c1be428247d430d0fadb4da871353c3f8eeefd4f05d784053cc3dd"
+      "samples": 9600,
+      "duration_seconds": 0.6,
+      "signal_sha256": "c32aae285674e8ffbf61ab3723328bef9efa02bb2a14bcdb93891f58cb649367"
     }
   ]
 }

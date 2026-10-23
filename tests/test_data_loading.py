@@ -9,7 +9,7 @@ import numpy as np
 
 from src.data_loader import load_audio, load_dataset
 from src.preprocessing import (DEFAULT_DATA_DIR, parse_filename,
-                               read_validated_wav, validate_dataset)
+                               read_validated_wav, validate_dataset, preprocess_audio)
 
 SPEAKERS = [f"S{i}" for i in range(1, 7)]
 
@@ -39,8 +39,9 @@ class ActualDatasetTests(unittest.TestCase):
                 self.assertEqual(record["sample_rate"], 16000)
                 self.assertTrue(np.isfinite(record["audio"]).all())
                 self.assertGreater(record["audio"].size, 0)
-                self.assertGreaterEqual(record["audio"].min(), -1)
-                self.assertLess(record["audio"].max(), 1)
+                raw = load_audio(record["path"], preprocess=False)["audio"]
+                self.assertIsNone(record["preprocessing"])
+                np.testing.assert_array_equal(record["audio"], raw)
 
     def test_five_speaker_expectation_reports_mismatch(self):
         report = validate_dataset(expected_speakers=SPEAKERS[:5])
@@ -106,6 +107,37 @@ class InvalidInputTests(unittest.TestCase):
             report = validate_dataset(root, ["S1"])
             for message in ["Duplikat sinyal", "Duplikat speaker-vowel", "Nomor rekaman salah"]:
                 self.assertTrue(any(message in e for e in report["errors"]), report)
+
+
+class PreprocessingTests(unittest.TestCase):
+    def test_trim_keeps_padding_and_middle_silence(self):
+        rate = 16000
+        t = np.arange(rate // 2) / rate
+        vowel = (0.2 * np.sin(2 * np.pi * 220 * t)).astype(np.float32)
+        audio = np.concatenate([np.zeros(8000), vowel, np.zeros(3200), vowel, np.zeros(8000)]).astype(np.float32)
+        original = audio.copy()
+        result, info = preprocess_audio(audio, rate)
+        np.testing.assert_array_equal(audio, original)
+        self.assertLessEqual(info["start_sample"], 8000 - 1280)
+        self.assertGreaterEqual(info["end_sample"], len(audio) - 8000 + 1280)
+        self.assertGreater(info["start_sample"], 0)
+        self.assertLess(info["end_sample"], len(audio))
+        np.testing.assert_allclose(result, audio[info["start_sample"]:info["end_sample"]], atol=1e-7)
+
+    def test_dc_offset_and_short_recording(self):
+        audio = np.array([0.1, 0.2, 0.3], dtype=np.float32)
+        result, info = preprocess_audio(audio, 16000)
+        self.assertEqual(len(result), len(audio))
+        self.assertAlmostEqual(float(result.mean()), 0, places=6)
+        self.assertEqual(info["trim_status"], "kept_original_bounds")
+
+    def test_no_activity_keeps_bounds_and_invalid_input_rejected(self):
+        audio = np.full(16000, 1e-6, dtype=np.float32)
+        result, info = preprocess_audio(audio, 16000)
+        self.assertEqual(len(result), len(audio))
+        for bad in [[], [[1, 2]], [np.nan], [np.inf]]:
+            with self.assertRaises(ValueError):
+                preprocess_audio(bad, 16000)
 
 
 if __name__ == "__main__":
