@@ -27,6 +27,23 @@ python -m unittest discover -s tests -v
 
 ### Preprocessing dan data loading
 
+Untuk membuat ulang WAV langsung dari raw (FFmpeg harus tersedia):
+
+```powershell
+python -m src.prepare_dataset --ffmpeg ffmpeg
+```
+
+Perintah ini mengganti 60 WAV processed dan menyimpan backup di outputs.
+Setiap channel didekode terpisah, tanpa merata-ratakan kiri dan kanan.
+Channel dipilih konsisten per speaker dari median kontras energi frame,
+dengan penalti untuk clipping. Ini perkiraan, bukan pengukuran SNR atau jaminan
+channel paling bersih. Hasil saat ini: S3 kanan, speaker lain channel pertama
+(kiri untuk stereo). Setelah itu dilakukan DC offset removal dan trimming.
+Laporan pilihan channel, durasi, dan pesan decoder ada di
+`outputs/preprocessing_report.json`. File raw tidak diubah.
+FFmpeg masih mengeluarkan pesan decoding ALAC pada raw S4; WAV hasilnya lolos
+validasi, tetapi kualitas suaranya perlu dicek dengan mendengarkan.
+
 `src/preprocessing.py` mengecek format audio, sinyal kosong/rusak, jumlah
 rekaman, kelengkapan vowel, dan duplikat. Hasil validasi tampil sebagai JSON.
 `src/data_loader.py` membaca audio sebagai array NumPy float32 satu dimensi.
@@ -63,6 +80,7 @@ Saat disimpan, hasil dibulatkan kembali ke PCM 16-bit dan dibatasi ke rentang in
 
 Durasi sebelum/sesudah ada di `outputs/preprocessing_report.json`.
 Salinan WAV sebelum trimming ada di `outputs/processed_before_trim.zip`.
+Backup sebelum perbaikan channel memakai nama `processed_before_channel_fix_*.zip`.
 Hasil perlu didengarkan untuk memastikan bagian vowel tidak terpotong.
 Kalau ingin mencoba preprocessing pada audio lain, pakai `preprocess_audio()`
 atau `load_audio(path, preprocess=True)`. Jangan aktifkan lagi untuk dataset
