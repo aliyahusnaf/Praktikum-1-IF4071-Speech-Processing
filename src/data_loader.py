@@ -2,8 +2,8 @@
 
 from pathlib import Path
 
-from .preprocessing import (DEFAULT_DATA_DIR, parse_filename,
-                            read_validated_wav, validate_dataset, preprocess_audio)
+from .preprocessing import (DEFAULT_DATA_DIR, parse_filename, read_validated_wav,
+                            validate_dataset, validate_open_set, preprocess_audio)
 
 
 def load_audio(path, preprocess=False):
@@ -29,3 +29,12 @@ def load_dataset(data_dir=DEFAULT_DATA_DIR, expected_speakers=None, preprocess=F
         result[split] = [load_audio(path, preprocess=preprocess)
                          for path in sorted((root / relative).iterdir())]
     return result
+
+
+def load_open_set(data_dir=DEFAULT_DATA_DIR):
+    # Data uji open speaker dari kelompok lain (data/processed/test/open).
+    report = validate_open_set(data_dir)
+    if not report["valid"]:
+        raise ValueError("Open set tidak valid:\n- " + "\n- ".join(report["errors"]))
+    directory = Path(data_dir) / "test" / "open"
+    return [load_audio(path) for path in sorted(directory.iterdir())]

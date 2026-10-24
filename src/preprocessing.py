@@ -12,15 +12,23 @@ import numpy as np
 DEFAULT_DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "processed"
 VOWELS = frozenset("aiueo")
 FILENAME_PATTERN = re.compile(r"^(S[1-9][0-9]*)_([aiueo])([12])\.wav$", re.IGNORECASE)
+# Open set (kelompok lain): G<kelompok>S<speaker>_<vowel>.wav, contoh G04S03_a.wav
+OPEN_FILENAME_PATTERN = re.compile(r"^(G[0-9]{2}S[0-9]{2})_([aiueo])\.wav$", re.IGNORECASE)
 
 
 def parse_filename(path):
     # Ambil speaker, vowel, dan nomor rekaman dari nama file.
-    match = FILENAME_PATTERN.fullmatch(Path(path).name)
-    if match is None:
-        raise ValueError(f"Nama file tidak sesuai S<n>_<vowel><1|2>.wav: {path}")
-    return {"speaker": match[1].upper(), "label": match[2].lower(),
-            "recording": int(match[3])}
+    # File open set hanya punya satu rekaman, jadi recording = None.
+    name = Path(path).name
+    match = FILENAME_PATTERN.fullmatch(name)
+    if match is not None:
+        return {"speaker": match[1].upper(), "label": match[2].lower(),
+                "recording": int(match[3])}
+    match = OPEN_FILENAME_PATTERN.fullmatch(name)
+    if match is not None:
+        return {"speaker": match[1].upper(), "label": match[2].lower(), "recording": None}
+    raise ValueError(f"Nama file tidak sesuai S<n>_<vowel><1|2>.wav "
+                     f"atau G<nn>S<nn>_<vowel>.wav: {path}")
 
 
 def read_validated_wav(path):
@@ -157,6 +165,44 @@ def validate_dataset(data_dir=DEFAULT_DATA_DIR, expected_speakers=None):
             errors.append(f"Speaker-vowel di luar ekspektasi pada {split}: {speaker}_{vowel}")
     return {"valid": not errors, "expected_speakers": list(speakers),
             "observed_speakers": sorted(observed), "counts": counts,
+            "valid_audio_count": len(records), "errors": errors, "records": records}
+
+
+def validate_open_set(data_dir=DEFAULT_DATA_DIR):
+    # Cek test/open: nama file, format, tiap speaker lengkap 5 vowel, tidak ada duplikat.
+    directory = Path(data_dir) / "test" / "open"
+    errors, records, hashes, by_speaker = [], [], {}, {}
+    if not directory.is_dir():
+        return {"valid": False, "errors": [f"Folder tidak ditemukan: {directory}"],
+                "speakers": [], "valid_audio_count": 0, "records": []}
+    for path in sorted(directory.iterdir()):
+        if not path.is_file() or path.suffix.lower() != ".wav":
+            errors.append(f"Entri tidak diharapkan dalam dataset: {path}")
+            continue
+        if OPEN_FILENAME_PATTERN.fullmatch(path.name) is None:
+            errors.append(f"Nama file open harus G<nn>S<nn>_<vowel>.wav: {path.name}")
+            continue
+        try:
+            identity = parse_filename(path)
+            vowels = by_speaker.setdefault(identity["speaker"], [])
+            if identity["label"] in vowels:
+                errors.append(f"Duplikat speaker-vowel pada open: {path.name}")
+            vowels.append(identity["label"])
+            metadata = validate_audio_file(path)
+            digest = metadata["signal_sha256"]
+            if digest in hashes:
+                errors.append(f"Duplikat sinyal audio: {path} identik dengan {hashes[digest]}")
+            else:
+                hashes[digest] = str(path)
+            records.append({"split": "open", **identity, **metadata})
+        except ValueError as exc:
+            errors.append(str(exc))
+    for speaker, vowels in sorted(by_speaker.items()):
+        for vowel in sorted(VOWELS - set(vowels)):
+            errors.append(f"Rekaman hilang pada open: {speaker}_{vowel}.wav")
+    if not records:
+        errors.append(f"Folder open kosong: {directory}")
+    return {"valid": not errors, "speakers": sorted(by_speaker),
             "valid_audio_count": len(records), "errors": errors, "records": records}
 
 
