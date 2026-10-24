@@ -1,0 +1,34 @@
+[
+  {
+    "covariance": "full",
+    "cmvn": false,
+    "closed_recordings": 100.0,
+    "closed_speakers": 93.33333333333333,
+    "open_speakers": 68.75,
+    "average": 87.3611111111111
+  },
+  {
+    "covariance": "full",
+    "cmvn": true,
+    "closed_recordings": 100.0,
+    "closed_speakers": 96.66666666666667,
+    "open_speakers": 81.25,
+    "average": 92.6388888888889
+  },
+  {
+    "covariance": "diag",
+    "cmvn": false,
+    "closed_recordings": 100.0,
+    "closed_speakers": 93.33333333333333,
+    "open_speakers": 71.25,
+    "average": 88.19444444444444
+  },
+  {
+    "covariance": "diag",
+    "cmvn": true,
+    "closed_recordings": 100.0,
+    "closed_speakers": 100.0,
+    "open_speakers": 92.5,
+    "average": 97.5
+  }
+]

@@ -1,0 +1,391 @@
+{
+  "config": {
+    "covariance": "full",
+    "cmvn": false,
+    "reg": 0.0001,
+    "train_frames": {
+      "a": 545,
+      "i": 493,
+      "u": 383,
+      "e": 499,
+      "o": 562
+    }
+  },
+  "average_accuracy": 87.3611111111111,
+  "results": {
+    "closed_recordings": {
+      "accuracy": 100.0,
+      "correct": 30,
+      "total": 30,
+      "per_vowel": {
+        "a": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "i": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "u": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "e": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "o": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        }
+      },
+      "per_speaker": {
+        "S1": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S2": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S3": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S4": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S5": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S6": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        }
+      },
+      "confusion": {
+        "a": {
+          "a": 6,
+          "i": 0,
+          "u": 0,
+          "e": 0,
+          "o": 0
+        },
+        "i": {
+          "a": 0,
+          "i": 6,
+          "u": 0,
+          "e": 0,
+          "o": 0
+        },
+        "u": {
+          "a": 0,
+          "i": 0,
+          "u": 6,
+          "e": 0,
+          "o": 0
+        },
+        "e": {
+          "a": 0,
+          "i": 0,
+          "u": 0,
+          "e": 6,
+          "o": 0
+        },
+        "o": {
+          "a": 0,
+          "i": 0,
+          "u": 0,
+          "e": 0,
+          "o": 6
+        }
+      },
+      "labels": [
+        "a",
+        "i",
+        "u",
+        "e",
+        "o"
+      ]
+    },
+    "closed_speakers": {
+      "accuracy": 93.33333333333333,
+      "correct": 28,
+      "total": 30,
+      "per_vowel": {
+        "a": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "i": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "u": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        },
+        "e": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 66.66666666666667
+        },
+        "o": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 100.0
+        }
+      },
+      "per_speaker": {
+        "S1": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        },
+        "S2": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S3": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S4": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S5": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "S6": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        }
+      },
+      "confusion": {
+        "a": {
+          "a": 6,
+          "i": 0,
+          "u": 0,
+          "e": 0,
+          "o": 0
+        },
+        "i": {
+          "a": 0,
+          "i": 6,
+          "u": 0,
+          "e": 0,
+          "o": 0
+        },
+        "u": {
+          "a": 0,
+          "i": 0,
+          "u": 6,
+          "e": 0,
+          "o": 0
+        },
+        "e": {
+          "a": 0,
+          "i": 1,
+          "u": 0,
+          "e": 4,
+          "o": 1
+        },
+        "o": {
+          "a": 0,
+          "i": 0,
+          "u": 0,
+          "e": 0,
+          "o": 6
+        }
+      },
+      "labels": [
+        "a",
+        "i",
+        "u",
+        "e",
+        "o"
+      ]
+    },
+    "open_speakers": {
+      "accuracy": 68.75,
+      "correct": 55,
+      "total": 80,
+      "per_vowel": {
+        "a": {
+          "correct": 13,
+          "total": 16,
+          "accuracy": 81.25
+        },
+        "i": {
+          "correct": 13,
+          "total": 16,
+          "accuracy": 81.25
+        },
+        "u": {
+          "correct": 4,
+          "total": 16,
+          "accuracy": 25.0
+        },
+        "e": {
+          "correct": 10,
+          "total": 16,
+          "accuracy": 62.5
+        },
+        "o": {
+          "correct": 15,
+          "total": 16,
+          "accuracy": 93.75
+        }
+      },
+      "per_speaker": {
+        "G03S01": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G03S02": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        },
+        "G03S03": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G03S05": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        },
+        "G04S03": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G04S04": {
+          "correct": 2,
+          "total": 5,
+          "accuracy": 40.0
+        },
+        "G07S01": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G07S02": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G07S03": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G07S04": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        },
+        "G07S05": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        },
+        "G09S01": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "G09S02": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G09S03": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        },
+        "G09S04": {
+          "correct": 3,
+          "total": 5,
+          "accuracy": 60.0
+        },
+        "G09S05": {
+          "correct": 4,
+          "total": 5,
+          "accuracy": 80.0
+        }
+      },
+      "confusion": {
+        "a": {
+          "a": 13,
+          "i": 0,
+          "u": 0,
+          "e": 0,
+          "o": 3
+        },
+        "i": {
+          "a": 0,
+          "i": 13,
+          "u": 1,
+          "e": 2,
+          "o": 0
+        },
+        "u": {
+          "a": 0,
+          "i": 0,
+          "u": 4,
+          "e": 0,
+          "o": 12
+        },
+        "e": {
+          "a": 0,
+          "i": 2,
+          "u": 1,
+          "e": 10,
+          "o": 3
+        },
+        "o": {
+          "a": 1,
+          "i": 0,
+          "u": 0,
+          "e": 0,
+          "o": 15
+        }
+      },
+      "labels": [
+        "a",
+        "i",
+        "u",
+        "e",
+        "o"
+      ]
+    }
+  }
+}
