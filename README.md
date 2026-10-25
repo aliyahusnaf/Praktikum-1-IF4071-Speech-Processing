@@ -180,13 +180,59 @@ dan `outputs/gaussian_ablation.json`.
 CMVN per speaker untuk data uji memakai statistik dari kelima rekaman vowel speaker
 uji itu sendiri, jadi butuh semua ucapan speaker tersebut tersedia saat pengujian.
 
-### DTW
+### DTW (Sistem 1)
 
-Belum diimplementasikan.
+`src/dtw.py`. Satu averaged template per vowel:
+
+1. DTW: cost lokal jarak Euclidean antar frame MFCC 39 dimensi. Langkah diagonal
+   berbobot 2, vertikal/horizontal berbobot 1, lalu cost total dibagi (N + M) supaya
+   ucapan dengan panjang berbeda bisa dibandingkan.
+2. Template: dari 6 rekaman template vowel itu dipilih medoid (total cost DTW terkecil
+   ke rekaman lain). Semua rekaman disejajarkan ke medoid dengan DTW, lalu frame yang
+   terpetakan ke frame acuan yang sama dirata-rata (DBA). Diulang 5 iterasi.
+3. Uji: MFCC input dibandingkan dengan DTW ke 5 template, cost terkecil dipilih.
+
+```powershell
+python -m src.dtw                  # konfigurasi utama: 5 iterasi, tanpa CMVN
+python -m src.dtw --cmvn --iterations 1
+python -m src.dtw --ablation       # bandingkan iterasi 0/1/5 x CMVN on/off
+```
+
+Hasil disimpan ke `outputs/dtw_results.json`, `outputs/dtw_predictions.csv`
+(prediksi dan cost tiap file), dan `outputs/dtw_ablation.json`.
+
+| Konfigurasi | Closed Recordings | Closed Speakers | Open Speakers | Rata-rata |
+|---|---|---|---|---|
+| 0 iterasi (medoid saja), tanpa CMVN | 86.67% | 70.00% | 71.25% | 75.97% |
+| 0 iterasi (medoid saja), CMVN per speaker | 73.33% | 76.67% | 62.50% | 70.83% |
+| 1 iterasi, tanpa CMVN | 96.67% | 96.67% | 82.50% | 91.94% |
+| 1 iterasi, CMVN per speaker | 100.00% | 96.67% | 76.25% | 90.97% |
+| 5 iterasi, tanpa CMVN (utama) | 96.67% | 96.67% | 82.50% | 91.94% |
+| 5 iterasi, CMVN per speaker | 100.00% | 100.00% | 77.50% | 92.50% |
+
+Closed recordings tidak otomatis 100% karena template adalah rata-rata 6 speaker,
+bukan rekaman aslinya.
+
+### Perbandingan DTW dan Gaussian
+
+```powershell
+python -m src.compare
+```
+
+Membaca `outputs/dtw_results.json` dan `outputs/gaussian_results.json`, lalu menulis
+`outputs/comparison.md` berisi ringkasan akurasi, Tabel 1 (per vowel), Tabel 2
+(closed per speaker), Tabel 3 (open per speaker), dan confusion matrix.
+
+Konfigurasi utama keduanya (tanpa CMVN):
+
+| Sistem | Closed Recordings | Closed Speakers | Open Speakers | Rata-rata |
+|---|---|---|---|---|
+| DTW | 96.67% | 96.67% | 82.50% | 91.94% |
+| Gaussian | 100.00% | 93.33% | 68.75% | 87.36% |
 
 ### Pengujian dan akurasi
 
 `src/evaluation.py` berisi `evaluate(records, predictions)` yang menghitung akurasi
-total, per vowel, per speaker, dan confusion matrix. Fungsi ini bisa dipakai juga
-untuk DTW. Closed recordings memakai audio template; closed speakers memakai
+total, per vowel, per speaker, dan confusion matrix. Fungsi ini dipakai oleh DTW
+dan Gaussian. Closed recordings memakai audio template; closed speakers memakai
 rekaman kedua dari speaker yang sama; open speakers memakai `load_open_set()`.

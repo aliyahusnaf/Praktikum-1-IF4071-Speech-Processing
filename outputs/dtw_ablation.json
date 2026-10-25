@@ -1,0 +1,50 @@
+[
+  {
+    "iterations": 0,
+    "cmvn": false,
+    "closed_recordings": 86.66666666666667,
+    "closed_speakers": 70.0,
+    "open_speakers": 71.25,
+    "average": 75.97222222222223
+  },
+  {
+    "iterations": 0,
+    "cmvn": true,
+    "closed_recordings": 73.33333333333333,
+    "closed_speakers": 76.66666666666667,
+    "open_speakers": 62.5,
+    "average": 70.83333333333333
+  },
+  {
+    "iterations": 1,
+    "cmvn": false,
+    "closed_recordings": 96.66666666666667,
+    "closed_speakers": 96.66666666666667,
+    "open_speakers": 82.5,
+    "average": 91.94444444444446
+  },
+  {
+    "iterations": 1,
+    "cmvn": true,
+    "closed_recordings": 100.0,
+    "closed_speakers": 96.66666666666667,
+    "open_speakers": 76.25,
+    "average": 90.97222222222223
+  },
+  {
+    "iterations": 5,
+    "cmvn": false,
+    "closed_recordings": 96.66666666666667,
+    "closed_speakers": 96.66666666666667,
+    "open_speakers": 82.5,
+    "average": 91.94444444444446
+  },
+  {
+    "iterations": 5,
+    "cmvn": true,
+    "closed_recordings": 100.0,
+    "closed_speakers": 100.0,
+    "open_speakers": 77.5,
+    "average": 92.5
+  }
+]

@@ -1,6 +1,4 @@
 # Perhitungan akurasi: total, per vowel, per speaker, dan confusion matrix.
-# Dipakai oleh sistem Gaussian, dan bisa dipakai juga oleh sistem DTW.
-
 VOWEL_ORDER = ["a", "i", "u", "e", "o"]
 
 
